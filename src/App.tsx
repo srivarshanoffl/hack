@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider, Outlet, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ShieldCheck, Compass } from "lucide-react";
+import Login from "./pages/Login";
 
 function RootLayout() {
   return (
@@ -13,7 +14,7 @@ function RootLayout() {
           </div>
           <nav className="flex gap-4 text-sm font-medium text-slate-600 dark:text-slate-300">
             <Link to="/" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-              Home
+              Login
             </Link>
             <Link to="/about" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
               About
@@ -71,14 +72,22 @@ function About() {
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Login />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/home-old",
     element: <RootLayout />,
     children: [
       {
-        path: "/",
+        path: "/home-old",
         element: <Home />,
       },
       {
-        path: "/about",
+        path: "/home-old/about",
         element: <About />,
       },
     ],
