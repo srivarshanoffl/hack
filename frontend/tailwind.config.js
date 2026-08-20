@@ -50,6 +50,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        hack: {
+          bg: "#0B0C0F",
+          surface: "#111318",
+          accent: "#FF4F70",
+          text: "#F5F5F5",
+          muted: "rgba(255, 255, 255, 0.55)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,10 +72,21 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0px) scale(1)" },
+          "50%": { transform: "translateY(-10px) scale(1.05)" },
+        },
+        "float-reverse": {
+          "0%, 100%": { transform: "translateY(0px) scale(1)" },
+          "50%": { transform: "translateY(10px) scale(0.95)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-slow": "pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        float: "float 6s ease-in-out infinite",
+        "float-reverse": "float-reverse 8s ease-in-out infinite",
       },
     },
   },
